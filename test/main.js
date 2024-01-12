@@ -28,12 +28,12 @@ describe('DOM', () => {
 	});
 
 	it('should have a number type of card image width and height', () => {
-		const cardImageEl = document.querySelector('.card__image img');
-		const cardImageWidth = cardImageEl.width;
-		const cardImageHeight = cardImageEl.height;
+		const cardImgEl = document.querySelector('.card__image img');
+		const cardImgWidth = parseInt(cardImgEl.getAttribute('width'));
+		const cardImgHeight = parseInt(cardImgEl.getAttribute('height'));
 
-		assert.typeOf(cardImageWidth, 'number');
-		assert.typeOf(cardImageHeight, 'number');
+		assert.typeOf(cardImgWidth, 'number');
+		assert.typeOf(cardImgHeight, 'number');
 	});
 
 	it("should have a title element that contains 'Equilibrium #3429' word", () => {
@@ -51,8 +51,9 @@ describe('DOM', () => {
 	});
 
 	it('should have an empty alt attribute value of card image element', () => {
-		const cardImageAlt = document.querySelector('.card__image img').alt;
+		const cardImgEl = document.querySelector('.card__image img');
+		const cardImgAlt = cardImgEl.getAttribute('alt');
 
-		assert.isEmpty(cardImageAlt);
+		assert.isEmpty(cardImgAlt);
 	});
 });
